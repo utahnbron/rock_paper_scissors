@@ -20,3 +20,12 @@ Have fun and good luck!
 
 // playerSelection must be case-insensitive
     // rock, ROCK, RoCk must all work
+
+// create the playGame function
+    // use previous playRound function inside of this one
+    // make the entire game best of 5 rounds
+    // keep score and report a winner or loser at the end
+    // use loops if you would like or just call the playRound function 5 times in a row
+    // use console.log() to display the results of each round and the winner at the end
+    // use prompt() to get input from the user
+    
