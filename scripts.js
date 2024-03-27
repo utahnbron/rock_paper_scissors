@@ -17,48 +17,73 @@ function getComputerChoice() {
 }
 
 
+
 let playerSelection = prompt("Round 1 - Rock, Paper, or Scissors? - 1...2...3 shoot!")
 let result;
+const lowPlayerSelection =  playerSelection.toLowerCase();
+const capPlayerSelection = lowPlayerSelection.charAt(0).toUpperCase() + lowPlayerSelection.slice(1);
+const computerSelection = getComputerChoice();
 
 function playRound(capPlayerSelection, computerSelection) {
     if (capPlayerSelection === computerSelection) {
-        return("It's a tie! Play another round")
+        result = ("It's a tie! Play another round")
     }
     else if (capPlayerSelection === "Rock") {
         if (computerSelection === "Scissors") {
             result = "You win!";
             playerScore++;
-
+            // consider scoreboard output here
         } else {
             result = "You lose!";
             computerScore++;
-
+            // consider scoreboard output here
         }
     } 
-        
-        
-    } else if (capPlayerSelection === "Paper" && computerSelection === "Rock") {
-        return("You win! Paper beats Rock");
-    } else if (capPlayerSelection === "Scissors" && computerSelection === "Paper") {
-        return("You win! Scissors beats Paper");
-    } else if (capPlayerSelection === "Rock" && computerSelection === "Paper") {
-        return("You lose! Paper beats Rock");
-    } else if (capPlayerSelection === "Paper" && computerSelection === "Scissors") {
-        return("You lose! Scissors beats Paper");
-    } else if (capPlayerSelection === "Scissors" && computerSelection === "Rock") {
-        return("You lose! Rock beats Scissors");
-    }  else {
-        
-    }   
+    else if (capPlayerSelection === "Paper") {
+        if (computerSelection === "Scissors") {
+            result = "You lose!";
+            computerScore++;
+            // consider scoreboard output here
+        } else {
+            result = "You win!";
+            playerScore++;
+            // consider scoreboard output here
+        }
+    }
+    else if (capPlayerSelection === "Scissors") {
+        if (computerSelection === "Rock") {
+            result = "You lose!";
+            computerScore++;
+            //consider scoreboard output here
+        } else {
+            result = "You win!";
+            playerScore++;
+            // consider scoreboard output here
+        }
+    }
 }
-
-
-const lowPlayerSelection =  playerSelection.toLowerCase();
-const capPlayerSelection = lowPlayerSelection.charAt(0).toUpperCase() + lowPlayerSelection.slice(1);
-const computerSelection = getComputerChoice();
-
-console.log(playRound(capPlayerSelection,computerSelection));
+console.log(result);
 console.log(capPlayerSelection);
 console.log(computerSelection);
-console.log(result1);
-console.log(getScore1(result1));
+console.log(computerScore);
+console.log(playerScore);
+
+
+// This is the initial 1 round code I used for step 4.
+   // } else if (capPlayerSelection === "Paper" && computerSelection === "Rock") {
+   //     return("You win! Paper beats Rock");
+   // } else if (capPlayerSelection === "Scissors" && computerSelection === "Paper") {
+   //     return("You win! Scissors beats Paper");
+   // } else if (capPlayerSelection === "Rock" && computerSelection === "Paper") {
+   //     return("You lose! Paper beats Rock");
+   // } else if (capPlayerSelection === "Paper" && computerSelection === "Scissors") {
+   //     return("You lose! Scissors beats Paper");
+   // } else if (capPlayerSelection === "Scissors" && computerSelection === "Rock") {
+   //     return("You lose! Rock beats Scissors");
+   // }  else {
+   //     
+   // }   
+// }
+
+
+
